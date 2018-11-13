@@ -11,7 +11,7 @@ const mapStatetoProps=(state) =>{
   return { appConsole, numConsole};
 }
 const actionCreators = { change, change2  };
-// App = connect(mapStatetoProps,actionCreators)(App)
+// 使用装饰器 npm install babel-plugin-transform-decorators-legacy --save-dev 这样写
 @connect(mapStatetoProps,actionCreators)
 
 class App extends Component {
