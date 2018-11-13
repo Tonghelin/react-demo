@@ -1,28 +1,40 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+// import 'antd-mobile/dist/antd-mobile.css'
+import {Button} from 'antd-mobile';
+import { connect } from 'react-redux';
+import { change, change2  } from './actions/index'
+
+const mapStatetoProps=(state) =>{
+  let { appConsole, numConsole} = state;
+  return { appConsole, numConsole};
+}
+const actionCreators = { change, change2  };
+// App = connect(mapStatetoProps,actionCreators)(App)
+@connect(mapStatetoProps,actionCreators)
 
 class App extends Component {
   render() {
+    const {appConsole, numConsole,change,change2} = this.props;
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <p> { appConsole }-{numConsole} </p>
+        <Button type='primary' onClick={change}>change</Button>
+        <br/>
+        <Button type='primary' onClick={()=> {change2(1)}}>change2</Button>
       </div>
     );
   }
 }
+
+// 未使用装饰器这样写connect
+// const mapStatetoProps=(state) =>{
+//   let { appConsole, numConsole} = state;
+//   return { appConsole, numConsole};
+// }
+// const actionCreators = { change, change2  };
+// App = connect(mapStatetoProps,actionCreators)(App)
 
 export default App;
