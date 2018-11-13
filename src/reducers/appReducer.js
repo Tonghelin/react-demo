@@ -1,6 +1,7 @@
 // 通过reducer建立
 // reducer ： 根据oldState 和 action 生成 newState
 function appConsole(state=0, action){
+  console.log(action)
   switch (action.type) {
     case 1:
       return '晴天';

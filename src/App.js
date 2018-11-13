@@ -4,6 +4,7 @@ import './App.css';
 // import 'antd-mobile/dist/antd-mobile.css'
 import {Button} from 'antd-mobile';
 import { connect } from 'react-redux';
+import axios from 'axios';
 import { change, change2  } from './actions/index'
 
 const mapStatetoProps=(state) =>{
@@ -15,6 +16,21 @@ const actionCreators = { change, change2  };
 @connect(mapStatetoProps,actionCreators)
 
 class App extends Component {
+
+  componentDidMount() {
+    axios.get('/data')
+      .then(
+        (res) => {
+          console.log('axios.get',res)
+        }
+      ).catch(
+      (err) => {
+        console.log('123123123213232')
+        console.log(err)
+      }
+    )
+  }
+
   render() {
     const {appConsole, numConsole,change,change2} = this.props;
 

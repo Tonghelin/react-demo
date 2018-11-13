@@ -53,20 +53,20 @@ app.get('/',function (req,res) {
 })
 
 app.get('/data',function (req,res) {
-  // res.json({name:'react-demo',type:'webapp'});
+  res.json({name:'react-demo',type:'webapp'});
 
   //查找数据
-  User.find({},function (err, doc) {
-    res.json(doc);
-  })
+  // User.find({},function (err, doc) {
+  //   res.json(doc);
+  // })
   // 过滤查找
   // User.find({'user': 'imooc'},function (err, doc) {
   //   res.json(doc);
   // })
   // 只查One找一条 findOne
-  User.find({},function (err, doc) {
-    res.json(doc);
-  })
+  // User.find({},function (err, doc) {
+  //   res.json(doc);
+  // })
 })
 
 app.listen(9093,function () {
