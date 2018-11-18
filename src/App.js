@@ -4,26 +4,20 @@ import './App.css';
 // import 'antd-mobile/dist/antd-mobile.css'
 import {Button} from 'antd-mobile';
 import { connect } from 'react-redux';
-import { change, change2  } from './actions/index'
 
 const mapStatetoProps=(state) =>{
-  let { appConsole, numConsole} = state;
-  return { appConsole, numConsole};
 }
-const actionCreators = { change, change2  };
+const actionCreators = {   };
 // App = connect(mapStatetoProps,actionCreators)(App)
 @connect(mapStatetoProps,actionCreators)
 
 class App extends Component {
   render() {
-    const {appConsole, numConsole,change,change2} = this.props;
 
     return (
       <div className="App">
-        <p> { appConsole }-{numConsole} </p>
-        <Button type='primary' onClick={change}>change</Button>
-        <br/>
-        <Button type='primary' onClick={()=> {change2(1)}}>change2</Button>
+        <p> home页面 </p>
+        <Button type='primary' >change</Button>
       </div>
     );
   }

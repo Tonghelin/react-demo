@@ -1,0 +1,9 @@
+.logo-container {
+  text-align: center;
+  border:2px solid #188eee;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+}
